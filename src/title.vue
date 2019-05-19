@@ -6,9 +6,12 @@
 
 <script>
 export default {
+    props:[
+        'titulo'
+    ],
     data() {
         return {
-            titulo: 'Este es un titulo importado'
+            
         }
     },
 }
