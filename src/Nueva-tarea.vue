@@ -28,10 +28,10 @@ export default {
                 this.tareas.push({
                         texto: newText,
                         terminada:false,
-                    })
+                })
+                
+            };
                 this.nuevaTarea = ''
-            }
-
         }
     },
 }
