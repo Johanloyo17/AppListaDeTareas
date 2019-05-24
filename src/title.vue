@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="display-4 my-3">{{titulo}}</h2>
+        <h2 class="display-4 my-3 esto">{{titulo}}</h2>
     </div>
 </template>
 
@@ -24,3 +24,6 @@ export default {
     },
 }
 </script>
+
+
+

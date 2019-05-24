@@ -29,7 +29,7 @@ export default {
                         texto: newText,
                         terminada:false,
                 })
-                
+                this.$emit("sumarContador",1)
             };
                 this.nuevaTarea = ''
         }

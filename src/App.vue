@@ -2,11 +2,17 @@
 	<div id="app" class="container jumbotron">
 		<!-- title component -->
 		<titulo :titulo="encabezado"></titulo>
-		<span class="bg-dark text-light p-1 m-2">{{contadorTareas}}</span>
+		<div class="d-flex">
+			<span class="bg-dark text-light p-1 m-2">{{contadorTareas}}</span>
+			<!-- 
+				
+			 -->
+		</div>
+
 		<!-- ingresar tareas -->
-		<new-tarea :tareas="tareas"></new-tarea>
+		<new-tarea :tareas="tareas" v-on:sumarContador="contadorTareas++"></new-tarea>
 		<!-- lista tareas -->
-		<lista-tareas :tareas="tareas"></lista-tareas>
+		<lista-tareas :tareas="tareas" v-on:restarContador="contadorTareas--" v-on:numTareas="cantidadTareas = $event"></lista-tareas>
 		
 	</div>
 
@@ -26,7 +32,6 @@ export default {
 	},
 	data() {
 		return {
-			contadorTareas:3 ,
 			encabezado:'App lista de tareas con Vue.js',
 			tareas:[
 				{
@@ -41,7 +46,9 @@ export default {
 					texto:'Aprender Node',
 					terminada:false,
 				},
-			]
+			],
+			contadorTareas:3 ,
+			
 		}
 	},
 }

@@ -19,6 +19,8 @@
                         </button>
                     </div>
                 </li>
+        <span>{{ indice }}</span>
+
         </ul>
 </template>
 
@@ -28,12 +30,18 @@
 export default {
     
     props:['tareas'],
-
+    data() {
+        return {
+            
+        }
+    },
     methods: {
         deleteTarea(indice){
             //borra un elemento, el que vienedel indice
             //borra 1 elemento
-            this.tareas.splice(indice,1)
+            this.tareas.splice(indice,1);
+            this.$emit("restarContador",1)
+        
         }
     },
 }
