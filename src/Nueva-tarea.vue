@@ -14,6 +14,7 @@
     </div>
 </template>
 <script>
+import {bus} from "./main"
 export default {
     props:['tareas'] , 
     data() {
@@ -29,10 +30,15 @@ export default {
                         texto: newText,
                         terminada:false,
                 })
-                this.$emit("sumarContador",1)
+                // this.$emit("sumarContador",1)
+                bus.$emit('actualizarContador', this.tareas.length )
+                
             };
                 this.nuevaTarea = ''
         }
+    },
+    created() {
+        bus.$emit('actualizarContador', this.tareas.length )
     },
 }
 </script>

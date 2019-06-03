@@ -4,7 +4,7 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './stylus/app.styl'
 
-
+export var bus = new Vue();
 
 
 new Vue({

@@ -4,17 +4,18 @@
                         v-for="(tarea, indice) of tareas" 
                         class="list-group-item d-flex"
                         :class="{terminada : tarea.terminada} ">
-                    <span>
+                    <span >
                         {{tarea.texto}}
                     </span>
                     <div class="ml-auto">
                         <button class="btn btn-sm btn-success "
                                 @click="tarea.terminada = !tarea.terminada"
+                                
                             >Listo
                         </button>
                         <button 
-                            class="btn btn-sm btn-danger"
-                            @click="deleteTarea(indice)"
+                                class="btn btn-sm btn-danger"
+                                @click="deleteTarea(indice)"
                             >X
                         </button>
                     </div>
@@ -27,9 +28,10 @@
 
 
 <script>
+import {bus} from './main'
 export default {
     
-    props:['tareas'],
+    props:['tareas','contarTareas'],
     data() {
         return {
             
@@ -37,12 +39,15 @@ export default {
     },
     methods: {
         deleteTarea(indice){
-            //borra un elemento, el que vienedel indice
+            //borra un elemento, el que viene del indice
             //borra 1 elemento
             this.tareas.splice(indice,1);
-            this.$emit("restarContador",1)
-        
+            bus.$emit('actualizarContador', this.tareas.length )
+            
+            
+            
         }
+        
     },
 }
 
