@@ -1,15 +1,18 @@
 <template>
-    <div class="input-group">
-        <input 
-            placeholder="Escribe una nueva tarea"
-            v-model="nuevaTarea" 
-            type="text"
-            class="form-control"
-            @keyup.enter="guardarTarea"
-            
-        >
-        <span class="input-group-btn">
-            <button @click="guardarTarea" class="btn btn-primary">Agregar</button>
+    <div class="row nuevaTarea">
+        <div class="input-tareas input-field">
+            <input 
+                v-model="nuevaTarea" 
+                type="text"
+                @keyup.enter="guardarTarea"
+                id="icon_prefix"  
+                class="validate"
+            >
+
+            <label for="icon_prefix">First Name</label>
+        </div>
+        <span class="saveBoton input-group-btn">
+            <button @click="guardarTarea" class="btn-flat waves-effect waves-green">Agregar</button>
         </span>
     </div>
 </template>
@@ -38,7 +41,8 @@ export default {
         }
     },
     created() {
-        bus.$emit('actualizarContador', this.tareas.length )
+        bus.$emit('actualizarContador', this.tareas.length );
+        
     },
 }
 </script>

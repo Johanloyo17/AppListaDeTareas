@@ -1,15 +1,33 @@
 <template>
-	<div id="app" class="container jumbotron">
-		<!-- title component -->
-		<titulo :titulo="encabezado"
-				
-		></titulo>
-		
+	<div id="app" class="app">
+		<div class="containerAppTareas">
 
-		<!-- ingresar tareas. input,boton "guardar t" -->
-		<new-tarea :tareas="tareas" v-on:sumarContador="contadorTareas++"></new-tarea>
-		<!-- lista tareas -->
-		<lista-tareas :tareas="tareas" :contarTareas="contarTareas" v-on:restarContador="contadorTareas--" v-on:numTareas="cantidadTareas = $event"></lista-tareas>
+			<titulo :titulo="encabezado">
+				<!-- title component -->
+			</titulo>
+			
+			<div class="panelTareas">
+				<new-tarea :tareas="tareas" v-on:sumarContador="contadorTareas++">
+					<!-- ingresar tareas. input,boton "guardar t" -->
+				</new-tarea>
+				<div class="cont-contadores">
+					<contador-tareas>
+						<!-- contador de tareas -->
+					</contador-tareas>
+					<tareas-terminadas>
+						<!-- tcontador de tareasTerminadas -->
+					</tareas-terminadas>
+				</div>
+				<lista-tareas 
+					:tareas="tareas" 
+					:contarTareas="contarTareas" 
+					v-on:restarContador="contadorTareas--" 
+					v-on:numTareas="cantidadTareas = $event">
+					<!-- lista tareas -->
+				</lista-tareas>
+			</div>
+			
+		</div>
 		
 	</div>
 
@@ -17,15 +35,20 @@
 </template>
 
 <script>
-import newTarea from './Nueva-tarea'
 import titulo from './title'
+import newTarea from './Nueva-tarea'
+import contadorTareas from './comp-vue/contador-tareas'
 import listaTareas from './Lista-tareas'
+import tareasTerminadas from './comp-vue/tareas-terminadas'
+
 export default {
 	// componentes 
 	components:{
 		titulo,
 		newTarea,
 		listaTareas,
+		contadorTareas,
+		tareasTerminadas,
 	},
 	data() {
 		return {
@@ -44,14 +67,15 @@ export default {
 					terminada:false,
 				},
 			],
-			// contadorTareas: 3 ,
+			
 		}
 	},
 	methods :{
-		contarTareas(){
-			var numTareas = this.tareas.length
-			console.log(numTareas+" mierda")
-		}
+		//contando tareas
+		// contarTareas(){
+		// 	var numTareas = this.tareas.length
+		// 	console.log(numTareas+" mierda")
+		// }
 	}
 }
 </script>
