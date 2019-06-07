@@ -7,13 +7,13 @@
         <ul class="tareaList list-group">
             <li 
             v-for="(tarea, indice) of tareas" 
-            class="tareaList-tarea tarea-div list-group-item d-flex"
+            class=" hoverable tareaList-tarea tarea-div list-group-item d-flex"
             :class="{terminada : tarea.terminada} ">
                 <span >
                     {{tarea.texto}}
                 </span>
 
-                <div class=" ml-auto ">
+                <div class="buttonsTarea ml-auto ">
                     <!-- boton listo -->
                     <button class="btn-floating waves-effect waves-light btn-success "
                             @click="tarea.terminada = !tarea.terminada"
@@ -49,15 +49,15 @@
         methods: {
             deleteTarea(indice){
                 //borra un elemento, el que viene del indice
-                this.tareas.splice(indice,1);
+                this.tareas.splice(indice, 1);
                 // datos para los contadores
-                bus.$emit('actualizarContador', this.tareas.length ); 
-                bus.$emit('terminoTarea', 1)
+                bus.actualizarContador(this.tareas.length); 
+                bus.terminoTarea(1);
             }
         },
 
         beforeMount(){
-            bus.$emit('actualizarContador', this.tareas.length ); 
+            bus.actualizarContador(this.tareas.length); 
             // emite el evento justo antes de montar el componentes
         },
 

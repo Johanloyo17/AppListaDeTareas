@@ -6,13 +6,12 @@
                 type="text"
                 @keyup.enter="guardarTarea"
                 id="icon_prefix"  
-                class="validate"
+                class="validate text-light"
             >
-
-            <label for="icon_prefix">First Name</label>
+            <label for="icon_prefix">Agrega una tarea</label>
         </div>
         <span class="saveBoton input-group-btn">
-            <button @click="guardarTarea" class="btn-flat waves-effect waves-green">Agregar</button>
+            <button @click="guardarTarea" class="btn-flat waves-effect waves-green text-light">Agregar</button>
         </span>
     </div>
 </template>
@@ -23,6 +22,7 @@ export default {
     data() {
         return {
             nuevaTarea:'',
+            
         }
     },
     methods: {
@@ -33,16 +33,12 @@ export default {
                         texto: newText,
                         terminada:false,
                 })
-                // this.$emit("sumarContador",1)
-                bus.$emit('actualizarContador', this.tareas.length )
+                bus.actualizarContador(this.tareas.length)
                 
             };
                 this.nuevaTarea = ''
         }
     },
-    created() {
-        bus.$emit('actualizarContador', this.tareas.length );
-        
-    },
+    
 }
 </script>

@@ -1,11 +1,11 @@
 // variables
 $color = {
-    dark: #594F4F,
-    blue_-1:#547980,
-    blue_0:#45ADA8,
+    dark: #031634,
+    blue_-1:#033649,
+    blue_0:#036564,
     blue_1:#9DE0AD,
-    blue_-1op:#54798038 
-    light:#E5FCC2,
+    terra:#CDB380
+    light:#E8DDCB,
 }
 $p-tareas= .75rem 1.25rem;
 ////////
@@ -27,6 +27,10 @@ $p-tareas= .75rem 1.25rem;
 
 .app
     padding:0 25px 
+    background: $color.dark
+    width: 100vw
+    height : 100vh
+
 .containerAppTareas
     position relative
     width: 50vw
@@ -35,10 +39,10 @@ $p-tareas= .75rem 1.25rem;
     justify-content: space-between
     margin: 1rem 0
 .contadorTareas
-    border:  solid 1px $color.blue_-1 !important
+    border:  solid 1px $color.terra!important
     background: $color.blue_-1op !important
 .tareasTerminadas
-    border:  solid 1px $color.blue_-1 !important
+    border:  solid 1px $color.terra!important
     background: $color.blue_-1op !important
         
     // & .tareasTerminadas
@@ -64,9 +68,18 @@ $p-tareas= .75rem 1.25rem;
 // .tareaList
 //     &-tarea
     
+.buttonsTarea
+    button
+        margin: 0 5px
 
 .tarea-div
     background: $color.light
-    border: 1px solid #594F4F55
+    border: 2px solid $color.blue_0
     border-radius: 7px
     margin: .25vh 0
+    color: $color.dark
+    display: flex
+    align-items: center
+    font-size: 1.3em 
+    &:hover
+        background: lighten($color.light, 30%)

@@ -1,6 +1,6 @@
 <template>
 	<div id="app" class="app">
-		<div class="containerAppTareas">
+		<div class="containerAppTareas text-light">
 
 			<titulo :titulo="encabezado">
 				<!-- title component -->
@@ -28,6 +28,7 @@
 			</div>
 			
 		</div>
+		
 		
 	</div>
 

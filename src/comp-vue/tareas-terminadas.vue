@@ -1,5 +1,5 @@
 <template>
-    <div class="tareasTerminadas btn-flat waves-effect waves-green">
+    <div class="tareasTerminadas btn-flat waves-effect waves-green text-light">
         <div class="   list-info list-info-buttom ">
             <span class=" text-darken-2">Tareas finalizadas: {{tareasTerminadas}}</span>
         </div>
@@ -15,8 +15,9 @@ export default {
         }
     },
     created() {
-        bus.$on('terminoTarea',(numero) =>{
-            this.tareasTerminadas = this.tareasTerminadas + numero
+
+        bus.$on('terminoTarea',(cantidad) =>{
+            this.tareasTerminadas = this.tareasTerminadas + cantidad
         })
     },
 }
