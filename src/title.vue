@@ -1,15 +1,42 @@
 <template>
     <div>
-        <h2>{{titulo}}</h2>
+        <h2 class="display-4 m-0 ">{{titulo}}
+            
+        </h2>
+    <!-- <div class="list-info list-info-top  ">
+            <span>Tareas por realizar:</span>
+            <span class="rounded bg-info my-0 mx-2 px-2">{{contadorTareas}}</span>
+		</div> -->
     </div>
 </template>
 
+
+
+
 <script>
+import {bus} from './main'
 export default {
+    props:{
+        titulo:{
+            //validaciones de las propiedades
+            default: 'tareas',
+            type: String,
+        },
+
+    },
+
     data() {
         return {
-            titulo: 'Este es un titulo importado'
+        
         }
     },
+    // created() {
+    //     bus.$on('actualizarContador' ,(numTareas)=> {
+    //         this.contadorTareas = numTareas;
+    //     })
+    // },
 }
 </script>
+
+
+
