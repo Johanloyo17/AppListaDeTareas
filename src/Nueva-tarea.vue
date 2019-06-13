@@ -9,10 +9,10 @@
                 class="validate text-light"
             >
             <label for="icon_prefix">Agrega una tarea</label>
+            <span class="saveBoton input-group-btn">
+                <button @click="guardarTarea" class="btn-flat waves-effect waves-green text-lighten-5">Agregar</button>
+            </span>
         </div>
-        <span class="saveBoton input-group-btn">
-            <button @click="guardarTarea" class="btn-flat waves-effect waves-green text-light">Agregar</button>
-        </span>
     </div>
 </template>
 <script>
@@ -22,7 +22,6 @@ export default {
     data() {
         return {
             nuevaTarea:'',
-            
         }
     },
     methods: {

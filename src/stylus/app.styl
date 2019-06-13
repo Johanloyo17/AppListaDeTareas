@@ -10,26 +10,24 @@ $color = {
 $p-tareas= .75rem 1.25rem;
 ////////
 
+*
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+    
 
-
-// .list-info
-//     display: inline-flex;
-//     padding: 5px 50px 5px 35px;
-//     clip-path: polygon(0% 0%, 85% 0px, 100% 100%, 0% 100%);
-//     background: $color.dark
-//     opacity .8
-//     color: $color.light
-//     &-buttom
-//         border-radius: 0  0 0 30px;
-//     &-top
-//         border-radius: 30px 0px 0px 0px;
-
+.m0
+    margin: 0 !important
+    
+.titulo
+    font-size: 2.5rem
 
 .app
     padding:0 25px 
     background: $color.dark
-    width: 100vw
-    height : 100vh
 
 .containerAppTareas
     position relative
@@ -49,37 +47,67 @@ $p-tareas= .75rem 1.25rem;
         
 
 
-
+//nueva tareaq styles
 .nuevaTarea
     position: relative
     margin 0 !important
     
 .input-tareas
     width: 100%
-
+    margin: 2rem 0 !important
+    position: relative
 .saveBoton
     position: absolute
     height 100%
     right 0
+    top: -5px
     display: flex;
     align-items: center
-    top: -5px;
-
-// .tareaList
-//     &-tarea
     
+    button
+        border: solid 1px #cdb380 !important;
+        color: $color.light
+
+//lista de tareas styles 
+.tareaList
+    border: none !important
+    &-tarea
+        display: flex
+        background: $color.light 
+        border: 2px solid $color.blue_0 !important
+        padding: $p-tareas
+        color: $color.dark !important
+        display: flex
+        align-items: center
+        font-size: 1.3em 
+        .circle
+            background: $color.blue_1
+        span
+            color: $color.dark !important
+        &:hover
+            background: lighten($color.light, 10%) !important
+
 .buttonsTarea
+    margin-left: auto
     button
         margin: 0 5px
 
-.tarea-div
-    background: $color.light
-    border: 2px solid $color.blue_0
-    border-radius: 7px
-    margin: .25vh 0
-    color: $color.dark
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////
+.carta
     display: flex
-    align-items: center
-    font-size: 1.3em 
-    &:hover
-        background: lighten($color.light, 30%)
+    flex-direction: column
+    justify-content: center
+    align-content: center
+    background: $color.light
+    color: #000

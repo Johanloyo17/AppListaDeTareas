@@ -4,12 +4,13 @@
             <span>Tareas por realizar:</span>
             <span class="rounded bg-info my-0 mx-2 px-2">{{contadorTareas}}</span>
 		</div> -->
-        <ul class="tareaList list-group">
+        <ul class="tareaList collection  ">
             <li 
             v-for="(tarea, indice) of tareas" 
-            class=" hoverable tareaList-tarea tarea-div list-group-item d-flex"
+            class="tareaList-tarea collection-item avatar hoverable d-flex"
             :class="{terminada : tarea.terminada} ">
-                <span >
+                <div class=" circle"></div>
+                <span class="title">
                     {{tarea.texto}}
                 </span>
 
