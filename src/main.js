@@ -1,15 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import './stylus/app.styl';
 import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
+// fire base con vue
+// import vuefire from 'vuefire'
+import { rtdbPlugin } from 'vuefire'
 
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { dom } from '@fortawesome/fontawesome-svg-core'
-dom.watch() // This will kick of the initial replacement of i to svg tags and configure a MutationObserver
+Vue.use(rtdbPlugin)
+
 
 // bus datos events N tareas
 export var bus = new Vue({
@@ -22,12 +23,14 @@ export var bus = new Vue({
     }
   }
 });
-// font awesome vue
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+// llamado fire base
+
+
 Vue.config.productionTip = false
 
 new Vue({
   el: '#app',
   render: h => h(App)
 })
+

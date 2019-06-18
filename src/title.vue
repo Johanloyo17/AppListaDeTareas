@@ -1,8 +1,8 @@
 <template>
     <div>
-        <h2 class="display-4 m-0 ">{{titulo}}
+        <span class="titulo ">{{titulo}}
             
-        </h2>
+        </span>
     <!-- <div class="list-info list-info-top  ">
             <span>Tareas por realizar:</span>
             <span class="rounded bg-info my-0 mx-2 px-2">{{contadorTareas}}</span>
