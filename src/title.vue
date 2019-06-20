@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span class="titulo ">{{titulo}}
+        <span class="titulo white-text center-align ">{{titulo}}
             
         </span>
     <!-- <div class="list-info list-info-top  ">
