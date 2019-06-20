@@ -68,11 +68,18 @@
 							<input type="submit" value="enviar datos" class=" btn waves-effect white-text">
 						</div>
 					</form>
-					<div class=" collection">
-						<div class="colletion-item"
+					<div class=" collection lista">
+						<div class="lista-head">
+							<span>Titulo</span>
+							<span>Autor</span>
+							<span>Url</span>
+						</div>
+						<div class="collection-item lista-datos"
 							v-for="link in links"
 						>
 							<span> {{link.title}} </span>
+							<span> {{link.autor}} </span>
+							<span> {{link.link}} </span>
 						</div>
 					</div>
 				</div>
@@ -146,7 +153,7 @@ export default {
 				link: '',
 			},
 			// firebase data
-
+			links:[],
 
 			encabezado:'App lista de tareas con Vue.js',
 			tareas:[
