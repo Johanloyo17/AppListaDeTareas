@@ -17,7 +17,9 @@ $p-tareas= .75rem 1.25rem;
 	text-decoration: none;
 	border: none;
 	outline: none;
-    
+
+*
+    color: #000
 
 .m0
     margin: 0 !important
@@ -28,6 +30,11 @@ $p-tareas= .75rem 1.25rem;
 .app
     padding:0 25px 
     background: $color.dark
+    min-height 100vh
+    display grid
+    grid-template-columns: repeat(2, 1fr)
+    justify-content: space-between
+    grid-gap: 35px
 
 .containerAppTareas
     position relative
@@ -84,8 +91,7 @@ $p-tareas= .75rem 1.25rem;
             background: $color.blue_1
         span
             color: $color.dark !important
-        &:hover
-            background: lighten($color.light, 10%) !important
+
 
 .buttonsTarea
     margin-left: auto
@@ -110,4 +116,27 @@ $p-tareas= .75rem 1.25rem;
     justify-content: center
     align-content: center
     background: $color.light
-    color: #000
+
+.card
+    h4 
+        color: #000
+
+.linkform
+    color #000
+
+    //list styles
+
+.lista
+    &-head , &-datos  
+        display: grid
+        grid-template-columns: repeat(2,1fr) .5fr 
+        grid-template-rows: 1fr
+        justify-content: center
+        span
+            text-align: center
+.acciones
+    display: flex;
+    justify-content: center;
+    button 
+        font-weight: 800
+
