@@ -28,98 +28,25 @@
 			</div>
 			
 		</div>
-	
-		<div class="app_liks  m0">
-			<div class="card">
-				<div class=" card-title center-align">
-					<h4>Agrega un link</h4>
-				</div>
+		
+		<app-link></app-link>
 
-				<div class=" card-content white-text bg-white">
-					<form  class="text-dark input-field row"
-					v-on:submit.prevent="addLink" >
-						<div class="col s4  input-field">
-							<input  
-							v-model="newLink.title"
-							class=" linkform validate" 
-							type="text"  
-							name="form">
-							<label class=" " for="form ">titulo</label>
-						</div>
-						
-						<div class="col s4  input-field">
-							<input  
-							v-model="newLink.autor"
-							class=" linkform validate" 
-							type="text"  
-							name="form">
-							<label class=" " for="form ">autor</label>
-						</div>
-
-						<div class="col s4  input-field">
-							<input  
-							v-model="newLink.link"
-							class=" linkform validate" 
-							type="text"  
-							name="form">
-							<label class=" " for="form ">link</label>
-						</div>
-						<div class="col s12" >
-							<input type="submit" value="enviar datos" class=" btn waves-effect white-text">
-						</div>
-					</form>
-					<div class=" collection lista">
-						<div class="lista-head">
-							<span>Titulo</span>
-							<span>Autor</span>
-							<span>Url</span>
-						</div>
-						<div class="collection-item lista-datos"
-							v-for="link in links"
-						>
-							<span> {{link.title}} </span>
-							<span> {{link.autor}} </span>
-							<span> {{link.link}} </span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 
 
 </template>
 
 <script>
+// app tareas
 import titulo from './title'
 import newTarea from './Nueva-tarea'
 import contadorTareas from './comp-vue/contador-tareas'
 import listaTareas from './Lista-tareas'
 import tareasTerminadas from './comp-vue/tareas-terminadas'
-import firebase from 'firebase'
+// app links
+import AppLink from'./app-links/app-link'
 
-
-// firebase
-let config = {
-	apiKey: "AIzaSyCqjXldtc6piD7OJ4033blH-neCMIWm2NU",
-	authDomain: "appherramientas-512e2.firebaseapp.com",
-	databaseURL: "https://appherramientas-512e2.firebaseio.com",
-	projectId: "appherramientas-512e2",
-	storageBucket: "appherramientas-512e2.appspot.com",
-	messagingSenderId: "61001497921",
-	appId: "1:61001497921:web:db7b5bf010e72cfc"
-};
-
-//inicializando la firebase
-let app = firebase.initializeApp(config);
-//creando una variable para para tener acceso a esa base de datos 
-let db = app.database();
-
-//creando una clollecion de datos dentro de la base de datos 
-// referencia a la collecion de datos esta coleccion sera links
-let linksref = db.ref('links');
-
-// FIN firebase
 
 export default {
 	// componentes 
@@ -129,32 +56,19 @@ export default {
 		listaTareas,
 		contadorTareas,
 		tareasTerminadas,
+		AppLink,
 	},
 
 	// pidiendole a vue que traiga los datos de fire base 
 	//diciendole a vue que links se referencia en linksref asi lo tendremos disponible para usarlo en la vista
-	firebase: {
-		links : linksref
-	},
+	
 	methods: {
-		addLink: function (){
-			console.log(this.newLink)
-			linksref.push(this.newLink)
-			
-		}
+		
 	},
-
 	data() {
 		return {
 			// firebase data
-			newLink:{
-				title:'',
-				autor:'',
-				link: '',
-			},
-			// firebase data
-			links:[],
-
+			
 			encabezado:'App lista de tareas con Vue.js',
 			tareas:[
 				{
@@ -177,6 +91,4 @@ export default {
 }
 </script>
 
-<style>
 
-</style>

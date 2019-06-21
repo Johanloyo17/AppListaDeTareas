@@ -129,7 +129,14 @@ $p-tareas= .75rem 1.25rem;
 .lista
     &-head , &-datos  
         display: grid
-        grid-template-columns: repeat(3,1fr)
+        grid-template-columns: repeat(2,1fr) .5fr 
         grid-template-rows: 1fr
         justify-content: center
+        span
+            text-align: center
+.acciones
+    display: flex;
+    justify-content: center;
+    button 
+        font-weight: 800
 
