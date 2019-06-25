@@ -1,35 +1,42 @@
 <template>
-	<div id="app" class="app ">
-		<div class="app_tareas containerAppTareas text-light">
-
-			<titulo :titulo="encabezado">
-				<!-- title component -->
-			</titulo>
-			
-			<div class="panelTareas">
-				<new-tarea :tareas="tareas" v-on:sumarContador="contadorTareas++">
-					<!-- ingresar tareas. input,boton "guardar t" -->
-				</new-tarea>
-				<div class="cont-contadores">
-					<contador-tareas>
+	
+	<div id="app" class="">
+		<nav-bar></nav-bar>
+		
+		<!-- app container -->
+		<div class="app">
+			<div class="app_tareas containerAppTareas text-light">
+				<titulo :titulo="encabezado">
+					<!-- title component -->
+				</titulo>
+				
+				<div class="panelTareas">
+					<new-tarea :tareas="tareas" v-on:sumarContador="contadorTareas++">
+						<!-- ingresar tareas. input,boton "guardar t" -->
+					</new-tarea>
+					<div class="cont-contadores">
+						
 						<!-- contador de tareas -->
-					</contador-tareas>
-					<tareas-terminadas>
+						<contador-tareas>
+						</contador-tareas>
+						
 						<!-- tcontador de tareasTerminadas -->
-					</tareas-terminadas>
+						<tareas-terminadas>
+						</tareas-terminadas>
+					</div>
+					<lista-tareas 
+						:tareas="tareas" 
+						
+						v-on:restarContador="contadorTareas--" 
+						v-on:numTareas="cantidadTareas = $event">
+						<!-- lista tareas -->
+					</lista-tareas>
 				</div>
-				<lista-tareas 
-					:tareas="tareas" 
-					
-					v-on:restarContador="contadorTareas--" 
-					v-on:numTareas="cantidadTareas = $event">
-					<!-- lista tareas -->
-				</lista-tareas>
+				
 			</div>
 			
+			<app-link></app-link>
 		</div>
-		
-		<app-link></app-link>
 
 		
 	</div>
@@ -46,6 +53,8 @@ import listaTareas from './Lista-tareas'
 import tareasTerminadas from './comp-vue/tareas-terminadas'
 // app links
 import AppLink from'./app-links/app-link'
+// nav bar
+import navBar from './navegation/nav-bar'
 
 
 export default {
@@ -57,6 +66,7 @@ export default {
 		contadorTareas,
 		tareasTerminadas,
 		AppLink,
+		navBar,
 	},
 
 	// pidiendole a vue que traiga los datos de fire base 

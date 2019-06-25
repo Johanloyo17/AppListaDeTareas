@@ -1,64 +1,71 @@
 <template>
-    
-        <div class="app_liks  m0">
-			<div class="card">
-				<div class=" card-title center-align">
-					<h4>Agrega un link</h4>
-				</div>
+	<div class="app_liks  m0">
+		<div class="card">
+			<div class=" card-title center-align">
+				<h4>Agrega un link</h4>
+			</div>
 
-				<div class=" card-content white-text bg-white">
-					<form  class="text-dark input-field row"
-					v-on:submit.prevent="addLink" >
-						<div class="col s4  input-field">
-							<input  
-							v-model="newLink.title"
-							class=" linkform validate" 
-							type="text"  
-							name="form">
-							<label class=" " for="form ">titulo</label>
-						</div>
-						
-						<div class="col s4  input-field">
-							<input  
-							v-model="newLink.autor"
-							class=" linkform validate" 
-							type="text"  
-							name="form">
-							<label class=" " for="form ">autor</label>
-						</div>
-						
-						<div class="col s4  input-field">
-							<input  
-							v-model="newLink.link"
-							class=" linkform validate" 
-							type="text"  
-							name="form">
-							<label class=" " for="form ">link</label>
-						</div>
-						<div class="col s12" >
-							<input type="submit" value="enviar datos" class=" btn waves-effect white-text">
-						</div>
-					</form>
-					<div class=" collection lista">
-						<div class="lista-head collection-item ">
-							<span>Url</span>
-							<span>Autor</span>
-							<span>Accion</span>
-						</div>
-						<div class="collection-item lista-datos"
-							v-for="link   in links"
+			<div class=" card-content white-text bg-white">
+				<form  
+					class="text-dark input-field row"
+					v-on:submit.prevent="addLink" 
+					>
+
+					<div class="col s4  input-field">
+						<input  
+						v-model="newLink.title"
+						class=" linkform validate" 
+						type="text"  
+						name="form">
+						<label class=" " for="form ">titulo</label>
+					</div>
+					
+					<div class="col s4  input-field">
+						<input  
+						v-model="newLink.autor"
+						class=" linkform validate" 
+						type="text"  
+						name="form">
+						<label class=" " for="form ">autor</label>
+					</div>
+					
+					<div class="col s4  input-field">
+						<input  
+						v-model="newLink.link"
+						class=" linkform validate" 
+						type="text"  
+						name="form">
+						<label class=" " for="form ">link</label>
+					</div>
+					<div class="col s12" >
+						<input type="submit" value="enviar datos" class=" btn waves-effect white-text">
+					</div>
+				</form>
+
+				<!-- lista de links -->
+				<div class=" collection lista">
+					
+					<div class="lista-head collection-item ">
+						<span>Url</span>
+						<span>Autor</span>
+						<span>Accion</span>
+					</div>
+
+					<div 
+						class="collection-item lista-datos"
+						v-for="link   in links"
 						>
-							<span> <a :href="link.link" target="_blank">{{link.title}}</a> </span>
-							<span> {{link.autor}} </span>
-							<div class="acciones ">
-								<button class=" btn-floating  waves-effect waves-light red" @click="deleteLink(link)">X</button>
-							</div>
-
+						<span> <a :href="link.link" target="_blank">{{link.title}}</a> </span>
+						<span> {{link.autor}} </span>
+						<div class="acciones ">
+							<button class=" btn-floating  waves-effect waves-light red" @click="deleteLink(link)">X</button>
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
+	</div>
 </template>
 
 

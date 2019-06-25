@@ -1,12 +1,22 @@
 // variables
+// $color = {
+//     dark: #031634,
+//     blue_-1:#033649,
+//     blue_0:#036564,
+//     blue_1:#9DE0AD,
+//     terra:#CDB380
+//     light:#E8DDCB,
+// }
 $color = {
-    dark: #031634,
-    blue_-1:#033649,
-    blue_0:#036564,
-    blue_1:#9DE0AD,
-    terra:#CDB380
-    light:#E8DDCB,
-}
+    primary: #D14334
+    light: #FFEAAD
+    secundary: #028F76
+    secundary-1: #B3E099
+    dark: #1C2130
+    grey: lighten(#eee,30%)
+    }
+
+
 $p-tareas= .75rem 1.25rem;
 ////////
 
@@ -17,24 +27,35 @@ $p-tareas= .75rem 1.25rem;
 	text-decoration: none;
 	border: none;
 	outline: none;
-
-*
-    color: #000
+    
+body
+    background: $color.dark
 
 .m0
     margin: 0 !important
     
 .titulo
     font-size: 2.5rem
+    
 
 .app
     padding:0 25px 
-    background: $color.dark
-    min-height 100vh
+    width: 100vw
     display grid
     grid-template-columns: repeat(2, 1fr)
     justify-content: space-between
     grid-gap: 35px
+
+nav 
+    background: $color.primary !important 
+    margin-bottom: 20px
+    color: #000 !important
+    .nav-wrapper
+        padding: 0 15px 
+    a
+        color: lighten( $color.light , 30%) !important
+.text-dark
+    color: $color.dark !important
 
 .containerAppTareas
     position relative
@@ -44,14 +65,22 @@ $p-tareas= .75rem 1.25rem;
     justify-content: space-between
     margin: 1rem 0
 .contadorTareas
-    border:  solid 1px $color.terra!important
-    background: $color.blue_-1op !important
+    border:  solid 1px $color.light !important
+    background: $color.secundary !important
 .tareasTerminadas
-    border:  solid 1px $color.terra!important
-    background: $color.blue_-1op !important
+    border:  solid 1px $color.light !important
+    background: $color.secundary !important
         
     // & .tareasTerminadas
-        
+
+.botonApp
+    border:  solid 1px $color.light !important
+    background: $color.secundary !important
+    color: lighten($color.light, 20%)  !important
+    font-weight: 600
+    &-red
+        background: $color.primary !important
+
 
 
 //nueva tareaq styles
@@ -81,7 +110,7 @@ $p-tareas= .75rem 1.25rem;
     &-tarea
         display: flex
         background: $color.light 
-        border: 2px solid $color.blue_0 !important
+        border: 2px solid $color.blue !important
         padding: $p-tareas
         color: $color.dark !important
         display: flex
@@ -110,12 +139,6 @@ $p-tareas= .75rem 1.25rem;
 
 
 //////////////////////////////////
-.carta
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-content: center
-    background: $color.light
 
 .card
     h4 
@@ -127,16 +150,67 @@ $p-tareas= .75rem 1.25rem;
     //list styles
 
 .lista
+    color: #000
     &-head , &-datos  
         display: grid
         grid-template-columns: repeat(2,1fr) .5fr 
         grid-template-rows: 1fr
         justify-content: center
+        color: #000
         span
             text-align: center
+            color: #000
 .acciones
     display: flex;
     justify-content: center;
     button 
         font-weight: 800
+
+
+
+
+
+
+
+////////////////////////input styles 
+
+.singIn-cont
+    background: $color.grey;
+    position: absolute;
+    top: 10vh;
+    min-width 25rem
+    z-index: 5;
+    padding: 10px;
+    right: 20px;
+    line-height: 1.5 !important;
+    box-shadow: 3px 3px 40px 8px rgba(72, 72, 72, 0.32);
+    .forgot-text
+        text-align: right 
+        color grey 
+        font-size: .8rem
+        span:hover
+            text-decoration: underline
+            color: #000
+            cursor: pointer
+
+
+.inputs-container
+    padding: 10px
+    .input-field
+        margin: 15px 0 40px 0;
+.auth-title
+    padding: 10px 
+    display: flex 
+    font-size: 1.6rem;
+    letter-spacing: 5px;
+    font-weight: 600;
+    color: $color.dark
+
+.appInput
+    border-bottom:  solid 1px grey !important
+    
+.appInput:focus
+    border-bottom: $color.secundary solid 1px !important
+    
+
 

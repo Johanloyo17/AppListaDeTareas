@@ -9,21 +9,21 @@
             v-for="(tarea, indice) of tareas" 
             class="tareaList-tarea collection-item avatar hoverable d-flex"
             :class="{terminada : tarea.terminada} ">
-                <div class=" circle"></div>
+                <div class=" botonApp circle"></div>
                 <span class="title">
                     {{tarea.texto}}
                 </span>
 
                 <div class="buttonsTarea ml-auto ">
                     <!-- boton listo -->
-                    <button class="btn-floating waves-effect waves-light btn-success "
+                    <button class="btn-floating waves-effect waves-light  botonApp"
                             @click="tarea.terminada = !tarea.terminada"
                         >Listo
                     </button>
                     
                     <!-- boton eliminar tarea -->
                     <button 
-                            class="btn-floating btn-danger waves-effect waves-light "
+                            class="btn-floating  waves-effect  botonApp-red "
                             @click="deleteTarea(indice)"
                         >X
                     </button>
