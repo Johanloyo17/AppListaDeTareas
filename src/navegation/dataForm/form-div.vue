@@ -1,17 +1,13 @@
 <template>
     <div>
-        <div>
-            <slot name="titulo"></slot>
-            
-                    <slot name="password" ></slot>
-                    <slot name="email" ></slot>
-                    <slot></slot>
-                    <slot></slot>
-                    <slot></slot>
-                    <slot name="forgot-text" ></slot>
-                
-                <slot name="boton"></slot>
+        <slot name="titulo"></slot>
+        <div class="inputs-container"  >
+            <slot name="nombres" ></slot>
+            <slot name="email" ></slot>
+            <slot name="password" ></slot>
+            <slot name="forgot-text" ></slot>
         </div>
+        <slot name="boton"></slot>
     </div>
 </template>
 
@@ -27,7 +23,7 @@ export default {
     
     },
     destroyed() {
-        console.log("se destuyo todo, todo, todillo")
+        console.log("destruido")
     },
 }
 </script>

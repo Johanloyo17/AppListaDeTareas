@@ -12,7 +12,9 @@
                     <li @click="showAuth = !showAuth , componentId = 'signIn' "><a>Sing in</a></li>
                     <!-- esta etiqueta evita que se destruya el componente cuando se cierre -->
                 <transition name="slide-down">
-                    <component class="singIn-cont" v-if="showAuth" :is="componentId"></component>
+                    <keep-alive>
+                        <component class="log-cont" v-if="showAuth" :is="componentId"></component>
+                    </keep-alive>
                 </transition>
                     <!-- <sign-in></sign-in> -->
                 </ul>

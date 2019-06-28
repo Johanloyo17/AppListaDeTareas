@@ -37,8 +37,8 @@
 						name="form">
 						<label class=" " for="form ">link</label>
 					</div>
-					<div class="col s12" >
-						<input type="submit" value="enviar datos" class=" btn waves-effect white-text">
+					<div class="" >
+						<input type="submit" value="enviar datos" class=" btn-flat waves-effect waves-green text-lighten-5 btnApp-2 botonApp-red">
 					</div>
 				</form>
 
@@ -80,7 +80,6 @@ let db = app.database();
 //creando una clollecion de datos dentro de la base de datos 
 // referencia a la collecion de datos esta coleccion sera links
 let linksref = db.ref('links');
-
 // FIN firebase
 
 export default {

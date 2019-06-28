@@ -9,7 +9,9 @@
 // }
 $color = {
     primary: #D14334
+    primary-transparent: #d1433485
     light: #FFEAAD
+    light_25: lighten(#D14334,90%)
     secundary: #028F76
     secundary-1: #B3E099
     dark: #1C2130
@@ -81,7 +83,8 @@ nav
     &-red
         background: $color.primary !important
 
-
+.btnApp-2
+    border: solid 1px $color.primary !important
 
 //nueva tareaq styles
 .nuevaTarea
@@ -92,6 +95,8 @@ nav
     width: 100%
     margin: 2rem 0 !important
     position: relative
+    input 
+        color #fff
 .saveBoton
     position: absolute
     height 100%
@@ -141,25 +146,29 @@ nav
 //////////////////////////////////
 
 .card
-    h4 
-        color: #000
-
+    color: $color.dark !important
+    // &-title
 .linkform
-    color #000
-
+    color: $color.dark !important    
     //list styles
 
 .lista
-    color: #000
+    color: $color.dark !important    
+    &-head
+        border: solid 2px $color.light_25 !important
+    &-datos:nth-child(odd)
+        background: $color.light_25 !important
     &-head , &-datos  
         display: grid
         grid-template-columns: repeat(2,1fr) .5fr 
         grid-template-rows: 1fr
         justify-content: center
-        color: #000
+        color: $color.dark !important
+
         span
             text-align: center
-            color: #000
+            color: $color.dark !important
+            
 .acciones
     display: flex;
     justify-content: center;
@@ -174,7 +183,7 @@ nav
 
 ////////////////////////input styles 
 
-.singIn-cont
+.log-cont
     background: $color.grey;
     position: absolute;
     top: 10vh;
@@ -192,12 +201,25 @@ nav
             text-decoration: underline
             color: #000
             cursor: pointer
+    .names-cont
+        display: grid
+        grid-template-columns: repeat(2 , 1fr)
+        grid-gap: 15px
+        justify-content: space-between
+        margin-top 20px 
+
 
 
 .inputs-container
     padding: 10px
-    .input-field
-        margin: 15px 0 40px 0;
+    display: grid
+    grid-auto-rows: 1fr
+    grid-row-gap: 40px
+    input  
+        margin: 0 !important
+        height 2.5rem !important
+  //  .input-field
+
 .auth-title
     padding: 10px 
     display: flex 

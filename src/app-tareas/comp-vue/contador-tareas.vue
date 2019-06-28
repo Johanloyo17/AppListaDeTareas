@@ -10,7 +10,7 @@
 
 
 <script>
-import {bus} from '../main'
+import {bus} from '../../main'
 export default {
     data() {
         return {
@@ -22,7 +22,6 @@ export default {
         bus.$on('actualizarContador' ,(numTareas)=> {
             this.contadorTareas = numTareas;
         })
-        
     },
 }
 </script>

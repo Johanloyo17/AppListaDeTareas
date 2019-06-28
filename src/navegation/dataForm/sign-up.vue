@@ -1,9 +1,22 @@
 <template>
     <div>
         <form-div>
+            
             <div class="auth-title" slot="titulo">
-                <span>igor entrando camarrada</span>
+                <span>Registrar</span>
             </div>
+            
+            <div class="names-cont" slot="nombres"> 
+                <div class="input-field" >
+                    <input id="nombre" type="text" class="validate appInput">
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div class="input-field"  >
+                    <input id="apellido" type="text" class="validate appInput">
+                    <label for="apellido">Apellido</label>
+                </div>
+            </div>
+
             <div class="input-field" slot="email">
                 <input id="email" type="email" class="validate appInput">
                 <label for="email">Email</label>
@@ -13,9 +26,7 @@
                 <input id="password" type="password" class="validate appInput">
                 <label for="password">Contraseña</label>
             </div>
-            <div class="forgot-text" slot="forgot-text">
-                <span class="">Olvide mi Contraseña</span>
-            </div> 
+            
             <div class='row' slot="boton">
                 <div class=' botonApp col s12 btn waves-effect'>{{ boton }}</div>
             </div>
@@ -36,7 +47,7 @@ export default {
     },
     data() {
         return {
-            boton:"Login"
+            boton:"Registrar"
         }
     },
 }
