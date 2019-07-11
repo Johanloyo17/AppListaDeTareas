@@ -33,11 +33,19 @@ export default {
                         terminada:false,
                 })
                 bus.actualizarContador(this.tareas.length)
-                
+                this.nuevaTarea = '';
+                //enviado datos a firebase
+                this.$http.post('https://appherramientas-512e2.firebaseio.com/tareas.json',{
+                    texto: newText,
+                    terminada: false
+                }).then(r=> console.log(r))
+                //FIN enviado datos a firebase
             };
-                this.nuevaTarea = ''
         }
     },
+    created(){
+        this.$http.get()
+    }
     
 }
 </script>

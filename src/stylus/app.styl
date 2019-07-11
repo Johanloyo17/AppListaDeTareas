@@ -16,7 +16,7 @@ $color = {
     secundary-1: #B3E099
     dark: #1C2130
     grey: lighten(#eee,30%)
-    }
+}
 
 
 $p-tareas= .75rem 1.25rem;
@@ -147,7 +147,19 @@ nav
 
 .card
     color: $color.dark !important
-    // &-title
+    &-content
+        padding: 5px 24px;
+
+//overflow auto config
+.collection.lista 
+    max-height: 40vh !important;
+    overflow: auto;
+.tareaList.collection 
+    max-height: 45vh;
+    overflow: auto;
+
+
+
 .linkform
     color: $color.dark !important    
     //list styles
