@@ -35,17 +35,49 @@ export default {
                 bus.actualizarContador(this.tareas.length)
                 this.nuevaTarea = '';
                 //enviado datos a firebase
-                this.$http.post('https://appherramientas-512e2.firebaseio.com/tareas.json',{
+                this.$http.post('tareas.json',{
                     texto: newText,
                     terminada: false
-                }).then(r=> console.log(r))
+                }).then(r=> {
+                    return r.json()
+                }).then(rjason=> {
+                    console.log(rjason)
+                })
                 //FIN enviado datos a firebase
             };
         }
     },
     created(){
-        this.$http.get()
-    }
+        console.log("creado esta vaia")
+    },
+    computed:{
+        // tareasComp (){
+        //     return this.$http.get('tareas.json')
+        //     .then(respuesta =>{
+        //         return  respuesta.json();
+        //     })
+        //     .then(respuestaJson => {
+        //         //siclo for por cada id llenar el array local tareas con el contenido de los id 
+        //         for(let id in respuestaJson){
+        //             this.tareas.push(respuestaJson[id]);
+        //         }
+        //     })
+        // }
+    },
     
+    
+    beforeCreate() {
+        //llamado http a la api firebase al arreglo tareas retorna una promesa
+        this.$http.get('tareas.json')
+            .then(respuesta =>{
+                return  respuesta.json();
+            })
+            .then(respuestaJson => {
+                //siclo for por cada id llenar el array local tareas con el contenido de los id 
+                for(let id in respuestaJson){
+                    this.tareas.push(respuestaJson[id]);
+                }
+            })
+    },
 }
 </script>

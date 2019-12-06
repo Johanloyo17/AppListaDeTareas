@@ -54,20 +54,7 @@ export default {
     data() {
         return {
             encabezado:'Lista de tareas',
-			tareas:[
-				{
-					texto:'Aprender Vue.js',
-					terminada:false,
-				},
-				{
-					texto:'Aprender Agular.js',
-					terminada:false,
-				},
-				{
-					texto:'Aprender Node',
-					terminada:false,
-				},
-			],
+			tareas:[],
         }
     },
 }

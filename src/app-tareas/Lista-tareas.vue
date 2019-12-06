@@ -61,6 +61,9 @@
             bus.actualizarContador(this.tareas.length); 
             // emite el evento justo antes de montar el componentes
         },
+        updated(){
+            bus.actualizarContador(this.tareas.length); 
+        }
 
 
     }

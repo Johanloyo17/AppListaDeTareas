@@ -13,7 +13,7 @@ Vue.use(rtdbPlugin)
 
 //vue resourse para trabajar con llamados htttp
 Vue.use(vueResource);
-
+Vue.http.options.root = 'https://appherramientas-512e2.firebaseio.com'
 // bus datos events N tareas
 export var bus = new Vue({
   methods:{
